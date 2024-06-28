@@ -4,21 +4,21 @@ import { LatHtaukBayDinDto } from './dto/lat-htauk-bay-din.dto';
 
 @Injectable()
 export class LatHtaukBayDinService {
-  private readonly latHtaukBayDin: LatHtaukBayDinDto;
+  private readonly _latHtaukBayDin: LatHtaukBayDinDto;
   constructor() {
-    this.latHtaukBayDin = LatHtaukBayDinDb;
+    this._latHtaukBayDin = LatHtaukBayDinDb;
   }
 
   getAllQuestions() {
-    return this.latHtaukBayDin.questions;
+    return this._latHtaukBayDin.questions;
   }
 
   getNumberLists() {
-    return this.latHtaukBayDin.numberList;
+    return this._latHtaukBayDin.numberList;
   }
 
   getAnswer(questionNo: number, answerNo: number) {
-    return this.latHtaukBayDin.answers.find(
+    return this._latHtaukBayDin.answers.find(
       (x) => x.questionNo == questionNo && x.answerNo == answerNo,
     );
   }
